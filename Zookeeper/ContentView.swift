@@ -11,30 +11,28 @@ struct ContentView: View {
     var body: some View
     {
         List(
-            animals,
-            id: \.uniqueID
+            animals
         ) { animal in
             Text(
                 animal.name
             )
         }
     }
+    
 }
-struct Animal {
-    var uniqueID : Int
+struct Animal: Identifiable
+{
+    var id = UUID()
     var name: String
 }
 let animals = [
     Animal(
-        uniqueID: 0,
         name: "Dog"
     ),
     Animal(
-        uniqueID: 1,
         name: "Cat"
     ),
     Animal(
-        uniqueID: 2,
         name: "Parrot"
     )
 ]
