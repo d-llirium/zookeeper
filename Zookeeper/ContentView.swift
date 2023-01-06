@@ -10,19 +10,34 @@ import SwiftUI
 struct ContentView: View {
     var body: some View
     {
-       VStack
-        {
-           Text("I ❤️ List").font(.headline)
-           List {
-               Text("Item 1")
-               Text("Item 2")
-               Text("Item 3")
-           }
-           .listStyle(InsetGroupedListStyle()
-           )
+        List(
+            animals,
+            id: \.uniqueID
+        ) { animal in
+            Text(
+                animal.name
+            )
         }
     }
 }
+struct Animal {
+    var uniqueID : Int
+    var name: String
+}
+let animals = [
+    Animal(
+        uniqueID: 0,
+        name: "Dog"
+    ),
+    Animal(
+        uniqueID: 1,
+        name: "Cat"
+    ),
+    Animal(
+        uniqueID: 2,
+        name: "Parrot"
+    )
+]
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
