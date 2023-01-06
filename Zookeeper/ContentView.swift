@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        List {
             Text("Item 1")
             Text("Item 2")
             Text("Item 3")
