@@ -20,22 +20,13 @@ struct ContentView: View
     ]
     var body: some View
     {
-        VStack
+        List
         {
-            List(
+            ForEach(
                 animals
             ) { animal in
                 Text(
                     animal.name
-                )
-            }
-            Button(
-                "Add"
-            ) {
-                animals.append(
-                    Animal(
-                        name: "New Animal"
-                    )
                 )
             }
         }
